@@ -1,205 +1,171 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>जरिया आलमपुर | सरकारी नौकरी व योजनाएं</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #FF9933, #FFFFFF, #138808;
-}
-
-header {
-  background: linear-gradient(120deg, #ff6f00, #2e7d32);
-  color: black;
-  text-align: center;
-  padding: 18px;
-}
-
-.hero {
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPETqHHIL2flreDUfJSzzIBIBn8QvhcrxPYg&s") center/cover;
-  color: white;
-  text-align: center;
-  padding: 40px 15px;
-}
-
-.hero h2 {
-  margin: 0;
-  font-size: 26px;
-}
-
-.hero p {
-  opacity: 0.95;
-}
-
-.banner-row {
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-}
-
-.banner {
-  flex: 1;
-  background: white;
-  border-radius: 12px;
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.banner img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 12px;
-}
-
-.section-title {
-  font-weight: bold;
-  margin: 12px 0;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: linear-gradient(120deg,#1976d2,#42a5f5);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-footer {
-  text-align: center;
-  padding: 12px;
-  background: #111;
-  color: white;
-  font-size: 13px;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .banner-row {
-    flex-direction: column;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h2>🌾 जरिया आलमपुर</h2>
-  <p>आपके गांव की नौकरी और सरकारी योजनाएं</p>
-</header>
-
-<div class="hero">
-  <h2>लेटेस्ट अपडेट – सीधे मोबाइल पर</h2>
-  <p>सरकारी नौकरी | योजनाएं | फॉर्म लिंक</p>
-</div>
-
-<div class="banner-row">
-
-  <div class="banner">
-    <img src="data:image/jpeg;base64,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">
-    <h4>प्रधानमंत्री योजनाएं</h4>
-
-     <div class="card">
-    <h4>🎓 फ्री स्किल ट्रेनिंग</h4>
-    <p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>
-    <a class="btn" href="https://www.google.com/aclk?sa=L&ai=DChsSEwj27rqWhcmSAxUGqGYCHfGJBVUYACICCAEQABoCc20&co=1&ase=2&gclid=Cj0KCQiA4pvMBhDYARIsAGfgwvxZ0nuReFwYEJxX_AY0msnzQ49Igtb1i_JgDD8s53Fi1SIq0mOYnxoaAhqtEALw_wcB&cid=CAAS0gHkaIpEfeOYUYDOin-0MLpCEmjNKEEop2NpchAjcWkiXZ0Gz3CDybQE7-0kb2Z2c_ZhTnJEC53sk-nhEF3QV1Y8xqBZYgBFLKiVLa20OjZ4807VN5j-JASPlqPFmg8TjWCT9vTtuxUuwVvTKA4J0DPkdaMm7RynL-_7SYhiJkIz3cJe8_LJO1zGq6CKxs1U7xo2INKayBsQ8CxebyNq1J1hMMzYDCJ5iVnm9VG4phw14-rkNKUsW6V9H1KWxPagFWSIWpvptYIAL1tv8eIVY-cb1FA&cce=2&category=acrcp_v1_32&sig=AOD64_1dCWEE8fNsWUgCuEC5n2xA_FJJLw&q&nis=4&adurl&ved=2ahUKEwidiraWhcmSAxXwVmwGHYoKIDMQ0Qx6BAgVEAE" target="_blank">रजिस्टर करें</a>
-  </div>
-
-  </div>
-
-  <div class="banner">
-
-    <img src="data:image/jpeg;base64,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">
-    <h4>सरकारी भर्तियां</h4>
-
-    <div class="card">
-    <h4>🚆 रेलवे भर्ती 2026</h4>
-    <p>10वीं / ITI पास के लिए सुनहरा मौका।</p>
-    <a class="btn" href="https://www.rrbapply.gov.in/#/auth/landing" target="_blank">Apply करें</a>
-  </div>
-
-
-    
-  </div>
-
-</div>
-
-<div class="container">
-
-<h3 class="section-title">🔥 ताजा अपडेट</h3>
-
-<div class="cards">
-
-  <div class="card">
-    <h4>🚆 रेलवे भर्ती 2026</h4>
-    <p>10वीं / ITI पास के लिए सुनहरा मौका।</p>
-    <a class="btn" href="https://www.rrbapply.gov.in/#/auth/landing" target="_blank">Apply करें</a>
-  </div>
-
-  <div class="card">
-    <h4>🏠 प्रधानमंत्री आवास योजना</h4>
-    <p>घर बनाने के लिए सरकारी सहायता।</p>
-    <a class="btn" href="https://pmayglist.com/" target="_blank">जानकारी देखें</a>
-  </div>
-
-  <div class="card">
-    <h4>🎓 फ्री स्किल ट्रेनिंग</h4>
-    <p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>
-    <a class="btn" href="https://www.google.com/aclk?sa=L&ai=DChsSEwj27rqWhcmSAxUGqGYCHfGJBVUYACICCAEQABoCc20&co=1&ase=2&gclid=Cj0KCQiA4pvMBhDYARIsAGfgwvxZ0nuReFwYEJxX_AY0msnzQ49Igtb1i_JgDD8s53Fi1SIq0mOYnxoaAhqtEALw_wcB&cid=CAAS0gHkaIpEfeOYUYDOin-0MLpCEmjNKEEop2NpchAjcWkiXZ0Gz3CDybQE7-0kb2Z2c_ZhTnJEC53sk-nhEF3QV1Y8xqBZYgBFLKiVLa20OjZ4807VN5j-JASPlqPFmg8TjWCT9vTtuxUuwVvTKA4J0DPkdaMm7RynL-_7SYhiJkIz3cJe8_LJO1zGq6CKxs1U7xo2INKayBsQ8CxebyNq1J1hMMzYDCJ5iVnm9VG4phw14-rkNKUsW6V9H1KWxPagFWSIWpvptYIAL1tv8eIVY-cb1FA&cce=2&category=acrcp_v1_32&sig=AOD64_1dCWEE8fNsWUgCuEC5n2xA_FJJLw&q&nis=4&adurl&ved=2ahUKEwidiraWhcmSAxXwVmwGHYoKIDMQ0Qx6BAgVEAE" target="_blank">रजिस्टर करें</a>
-  </div>
-
-   <div class="card">
-    <h4>🚆 UP SCHLELORSHIP PROGRAM </h4>
-    <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
-    <a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>
-  </div>
- 
-  <div class="card">
-    <h4>🚆 UPSC </h4>
-    <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
-    <a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>
-  </div>
- <div class="card">
-    <h4>🚆 FOR GDS POST KA LIYA </h4>
-    <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
-    <a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>
-  </div>
-   <div class="card">
-    <h4>🚆 demographic data of jaria alampur </h4>
-    <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
-    <a class="btn" href="https://docs.google.com/spreadsheets/d/16Ef7JDEqXAdtbIMlGeQeDXOFPPmLJTRJbxfusnUYdoQ/edit?usp=drivesdk" target="_blank">check now करें</a>
-  </div>
-</div>
-</div>
-
-<footer>
-© 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI
-</footer>
-
-</body>
+<!DOCTYPE html>					
+"<html lang=""hi"">"					
+<head>					
+"<meta charset=""UTF-8"">"					
+"<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">"					
+<title>जरिया आलमपुर | सरकारी नौकरी व योजनाएं</title>					
+					
+<style>					
+body {					
+margin: 0;					
+font-family: 'Segoe UI', sans-serif;					
+background: #eef2f5;					
+}					
+					
+/* ===== HEADER ===== */					
+header {					
+background: linear-gradient(120deg, #ff6f00, #2e7d32);					
+color: black;					
+text-align: center;					
+padding: 30px 15px;					
+}					
+					
+.village-title {					
+font-size: 52px;   /* BIG TEXT */					
+font-weight: 800;					
+margin: 0;					
+}					
+					
+header p {					
+font-size: 18px;					
+margin-top: 8px;					
+}					
+					
+/* ===== HERO ===== */					
+.hero {					
+"background: url(""https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPETqHHIL2flreDUfJSzzIBIBn8QvhcrxPYg&s"") center/cover;"					
+color: white;					
+text-align: center;					
+padding: 40px 15px;					
+}					
+					
+.hero h2 {					
+font-size: 26px;					
+margin: 0;					
+}					
+					
+.hero p {					
+opacity: 0.95;					
+}					
+					
+/* ===== BANNERS ===== */					
+.banner-row {					
+display: flex;					
+gap: 12px;					
+padding: 12px;					
+}					
+					
+.banner {					
+flex: 1;					
+background: white;					
+border-radius: 12px;					
+text-align: center;					
+padding: 15px;					
+box-shadow: 0 3px 8px rgba(0,0,0,0.1);					
+}					
+					
+.banner img {					
+width: 70px;					
+height: 70px;					
+border-radius: 50%;					
+}					
+					
+/* ===== CARDS ===== */					
+.container {					
+padding: 12px;					
+}					
+					
+.section-title {					
+font-weight: bold;					
+margin: 12px 0;					
+font-size: 22px;					
+}					
+					
+.cards {					
+display: grid;					
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));					
+gap: 12px;					
+}					
+					
+.card {					
+background: white;					
+border-radius: 12px;					
+padding: 15px;					
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);					
+}					
+					
+.btn {					
+display: inline-block;					
+margin-top: 10px;					
+background: linear-gradient(120deg,#1976d2,#42a5f5);					
+color: white;					
+padding: 8px 14px;					
+border-radius: 6px;					
+text-decoration: none;					
+font-size: 14px;					
+}					
+					
+/* ===== FOOTER ===== */					
+footer {					
+text-align: center;					
+padding: 12px;					
+background: #111;					
+color: white;					
+font-size: 13px;					
+}					
+					
+/* ===== MOBILE RESPONSIVE ===== */					
+@media (max-width: 700px) {					
+.banner-row {					
+flex-direction: column;					
+}					
+					
+.village-title {					
+font-size: 36px; /* Mobile header size */					
+}					
+}					
+</style>					
+</head>					
+					
+<body>					
+					
+<header>					
+"<h2 class=""village-title"">🌾 जरिया आलमपुर</h2>"					
+<p>आपके गांव की नौकरी और सरकारी योजनाएं</p>					
+</header>					
+					
+"<div class=""hero"">"					
+<h2>लेटेस्ट अपडेट – सीधे मोबाइल पर</h2>					
+<p>सरकारी नौकरी | योजनाएं | फॉर्म लिंक</p>					
+</div>					
+					
+"<div class=""container"">"					
+"<h3 class=""section-title"">🔥 ताजा अपडेट</h3>"					
+					
+"<div class=""cards"">"					
+"<div class=""card"">"					
+<h4>🚆 रेलवे भर्ती 2026</h4>					
+<p>10वीं / ITI पास के लिए सुनहरा मौका।</p>					
+"<a class=""btn"" href=""https://www.rrbapply.gov.in/#/auth/landing"" target=""_blank"">Apply करें</a>"					
+</div>					
+					
+"<div class=""card"">"					
+<h4>🏠 प्रधानमंत्री आवास योजना</h4>					
+<p>घर बनाने के लिए सरकारी सहायता।</p>					
+"<a class=""btn"" href=""https://pmayglist.com/"" target=""_blank"">जानकारी देखें</a>"					
+</div>					
+					
+"<div class=""card"">"					
+<h4>🎓 फ्री स्किल ट्रेनिंग</h4>					
+<p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>					
+"<a class=""btn"" href=""#"" target=""_blank"">रजिस्टर करें</a>"					
+</div>					
+</div>					
+</div>					
+					
+<footer>					
+© 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI					
+</footer>					
+					
+</body>					
 </html>
