@@ -4,6 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>जरिया आलमपुर | सरकारी नौकरी व योजनाएं</title>  
 <style>
+    /* UNIQUE SEARCH */
+.search-box{
+margin-top:20px;
+display:flex;
+justify-content:center;
+}
+
+.search-box input{
+width:60%;
+padding:12px 20px;
+border:none;
+border-radius:30px;
+outline:none;
+font-size:16px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.search-box input:focus{
+width:70%;
+box-shadow:0 5px 30px rgba(0,0,0,0.5);
+}
+
     /* MENU BUTTON */
 .menu-btn{
 position:absolute;
@@ -117,20 +140,20 @@ font-family: 'Segoe UI', sans-serif;
 background: #eef2f5;  
 }  
 header {  
-background: linear-gradient(120deg, #ff6f00,#FFFFFF, #2e7d32);  
+background: linear-gradient(120deg, #ff6f00,#fff, #2e7d32);  
 color: black;  
 text-align: center;  
 padding: 26px;  
 margin: 2px;
 border-radius: 4px;
 }  
-.hero {  
-background: url("https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGhvdWdodHxlbnwwfHwwfHx8MA%3D%3D");
-color: orange;  
-text-align: center;  
-padding: 35px 15px;  
-margin: 2px;
-border-radius: 4px;
+/* HERO */
+.hero{
+background:linear-gradient(120deg,#ff6f00,#2e7d32);
+color:white;
+text-align:center;
+padding:40px 20px;
+border-radius:4px;
 }  
 .hero h2 {  
 margin: 0;  
@@ -237,9 +260,13 @@ flex-direction: column;
 alt = "Gram Panchayat Jaria Alamapur" class = "logo"height ="100"/></center>
 <h1> <b> <big>🌾 जरिया आलमपुर </b></h1></big>  
 <p>आपके गांव की नौकरी और सरकारी योजनाएं</p>  
+    div class="search-box">
+<input type="text" id="searchBox" placeholder="🔍 नौकरी / योजना खोजें..." onkeyup="searchData()">
+</div> 
 </header>  
+ <!--HERO--!>
 <div class="hero">  
-<h1>लेटेस्ट अपडेट – सीधे मोबाइल पर</h1>  
+<h2>लेटेस्ट अपडेट – सीधे मोबाइल पर</h2>  
 <p>सरकारी नौकरी | योजनाएं | फॉर्म लिंक</p>  
 </div>
   <hr>
@@ -401,6 +428,17 @@ if(!menu.contains(e.target) && !btn.contains(e.target)){
 closeMenu();
 }
 });
+
+/* SEARCH FUNCTION */
+function searchData(){
+let input = document.getElementById("searchBox").value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let text = card.innerText.toLowerCase();
+card.style.display = text.includes(input) ? "block" : "none";
+});
+}
 </script>
 <footer>  
 © 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI  
