@@ -129,29 +129,52 @@ background:#1e1e1e;
     background:#00c853;
 }
 /* SLIDER */
+/* SLIDER */
 .slider{
 width:100%;
-height: 300px;
 overflow:hidden;
 position:relative;
 }
+
+/* SLIDES */
 .slides{
 display:flex;
-width:300%;
-animation:slide 12s infinite;
+transition:transform 0.5s ease;
 }
-.slides img{
-width:100vw;
-height:300px;
+
+/* SLIDE */
+.slide{
+min-width:100%;
+}
+
+/* IMAGE */
+.slide img{
+width:100%;
+height:400px;
 object-fit:cover;
 }
-@keyframes slide{
-0%{margin-left:0;}
-33%{margin-left:0;}
-38%{margin-left:-100%;}
-66%{margin-left:-100%;}
-71%{margin-left:-200%;}
-100%{margin-left:-200%;}
+
+/* BUTTONS */
+button{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+color:#fff;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+/* POSITION */
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* MOBILE */
+@media(max-width:768px){
+.slide img{
+height:200px;
+}
 }
     /* WHATSAPP BUTTON */
 .whatsapp{
@@ -322,14 +345,25 @@ alt = "Gram Panchayat Jaria Alamapur" class = "logo"height ="100"/></center>
 </div>  
 </div>  
     <hr>
-    <!-- AUTO SLIDER -->
-<div class="slider">
-<div class="slides">
+    <!--SLIDER-->
+ <div class="slider">
+<div class="slides" id="slides">
+<div class="slide">
 <img src="https://www.jagranimages.com/images/newimg/11032024/11_03_2024-pm_kisan_10_23672104_143440606.webp">
+</div>
+<div class="slide">
 <img src="https://earthnews.in/wp-content/uploads/2026/03/Pradhan-Mantri-Jan-Aushadhi-Yojana.jpg">
+</div>
+<div class="slide">
 <img src="https://lokpahal.org/wp-content/uploads/2025/05/PM-Surya-Ghar-Muft-Bijli-Yojana.jpg">
 </div>
 </div>
+
+<button class="prev" onclick="prevSlide()">❮</button>
+<button class="next" onclick="nextSlide()">❯</button>
+
+</div>
+
   <hr>
 <div class="container">  
 <h3 class="section-title">🔥 ताजा अपडेट</h3>  
@@ -468,6 +502,41 @@ let text = card.innerText.toLowerCase();
 card.style.display = text.includes(input) ? "block" : "none";
 });
 }
+     <!-- slider script-->
+     let i = 0;
+const slides = document.getElementById("slides");
+const total = document.querySelectorAll(".slide").length;
+
+function show(){
+  slides.style.transform = "translateX(-" + (i * 100) + "%)";
+}
+
+function next(){
+  i = (i + 1) % total;
+  show();
+}
+
+function prev(){
+  i = (i - 1 + total) % total;
+  show();
+}
+
+/* AUTO SLIDE */
+setInterval(next,3000);
+
+/* TOUCH SUPPORT */
+let start = 0;
+
+slides.addEventListener("touchstart",e=>{
+  start = e.touches[0].clientX;
+});
+
+slides.addEventListener("touchend",e=>{
+  let end = e.changedTouches[0].clientX;
+
+  if(start > end + 50) next();
+  if(start < end - 50) prev();
+});
 </script>
 <footer>  
 © 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI  
