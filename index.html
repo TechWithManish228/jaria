@@ -304,7 +304,7 @@ flex-direction: column;
 <a href="https://scholarship.up.gov.in/index.aspx">🎓 Scholarship</a>
 <a href="https://sarkariresult.com.cm/">🚆 Jobs</a>
 </div>
-<!--HEADER--!>
+<!--HEADER-->
 <header>
   <!-- LEFT SIDE MENU -->
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -359,10 +359,8 @@ alt = "Gram Panchayat Jaria Alamapur" class = "logo"height ="100"/></center>
 <img src="https://lokpahal.org/wp-content/uploads/2025/05/PM-Surya-Ghar-Muft-Bijli-Yojana.jpg">
 </div>
 </div>
-
-<button class="prev" onclick="prevSlide()">❮</button>
-<button class="next" onclick="nextSlide()">❯</button>
-
+<button class="prev" onclick="prev()">❮</button>
+<button class="next" onclick="next()">❯</button>
 </div>
 
   <hr>
@@ -500,7 +498,7 @@ let cards = document.querySelectorAll(".card");
 
 cards.forEach(card=>{
 let text = card.innerText.toLowerCase();
-card.style.display = text.includes(input) ? "block" : "none";
+card.style.display = text.includes(input) ? "" : "none";
 });
 }
      <!-- slider script-->
