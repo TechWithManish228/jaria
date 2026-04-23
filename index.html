@@ -505,38 +505,53 @@ card.style.display = text.includes(input) ? "block" : "none";
      <!-- slider script-->
 let i = 0;
 const slides = document.getElementById("slides");
-const total = document.querySelectorAll(".slide").length;
+const allSlides = document.querySelectorAll(".slide");
+const total = allSlides.length;
 
+/* FIRST SLIDE CLONE */
+const clone = allSlides[0].cloneNode(true);
+slides.appendChild(clone);
+
+/* SHOW */
 function show(){
-  slides.style.transform = "translateX(-" + (i * 100) + "%)";
+  slides.style.transform = `translateX(-${i * 100}%)`;
 }
 
+/* NEXT */
 function next(){
-  i = (i + 1) % total;
+  i++;
+  slides.style.transition = "transform 0.5s ease";
   show();
+
+  if(i === total){
+    setTimeout(()=>{
+      slides.style.transition = "none";
+      i = 0;
+      show();
+    },500);
+  }
 }
 
+/* PREV */
 function prev(){
-  i = (i - 1 + total) % total;
-  show();
+  if(i === 0){
+    slides.style.transition = "none";
+    i = total;
+    show();
+
+    setTimeout(()=>{
+      slides.style.transition = "transform 0.5s ease";
+      i--;
+      show();
+    },50);
+  } else {
+    i--;
+    show();
+  }
 }
 
 /* AUTO SLIDE */
 setInterval(next,3000);
-
-/* TOUCH SUPPORT */
-let start = 0;
-
-slides.addEventListener("touchstart",e=>{
-  start = e.touches[0].clientX;
-});
-
-slides.addEventListener("touchend",e=>{
-  let end = e.changedTouches[0].clientX;
-
-  if(start > end + 50) next();
-  if(start < end - 50) prev();
-});
 </script>
 <footer>  
 © 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI  
