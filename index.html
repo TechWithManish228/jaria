@@ -1,618 +1,838 @@
-<!DOCTYPE html>  <html lang="hi">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--GOOGLE VARIFICATION-->
- <meta name="google-site-verification" content="EmqSqImAmN1wrIyXQeaO9CBWdMFta1o7wHbm-AcRzkU" />
-<meta name="description" content="सरकारी नौकरी और योजनाएं - जरिया आलमपुर">
-<meta name="keywords" content="jobs, yojana, scholarship, railway job">
-<title>जरिया आलमपुर | सरकारी नौकरी व योजनाएं</title>  
-<style>
-    /*img*/
-    .title{
-    text-align:center;
-    margin-bottom:40px;
-    color:#16a34a;
-    font-size:2.5rem;
-}
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-}
+<!DOCTYPE html>
+<html lang="hi">
 
-.gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:15px;
-}
-/* NEW BADGE */
-.new-badge{
-  position:absolute;
-  top:0;
-  right:0;
-  margin:5px;
-  background:red;
-  color:#fff;
-  padding:6px 10px;
-  font-size:12px;
-  font-weight:bold;
-  border-radius:9px;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="EmqSqImAmN1wrIyXQeaO9CBWdMFta1o7wHbm-AcRzkU" />
+  <meta name="description" content="सरकारी नौकरी और योजनाएं - जरिया आलमपुर">
+  <meta name="keywords" content="jobs, yojana, scholarship, railway job">
+  <title>जरिया आलमपुर | सरकारी नौकरी व योजनाएं</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f5;
+      overflow-x: hidden; /* स्क्रीन से बाहर कंटेंट न जाए */
+    }
 
-  /* BLINK EFFECT */
-  animation: blink 1.3s infinite;
-}
+    /* img */
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #16a34a;
+      font-size: 2.5rem;
+    }
 
-/* BLINK ANIMATION */
-@keyframes blink{
-  0%{opacity:1;}
-  50%{opacity:0;}
-  100%{opacity:1;}
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    /* NEW BADGE */
+    .new-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 5px;
+      background: red;
+      color: #fff;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 9px;
+      animation: blink 1.3s infinite;
+    }
+
+    /* BLINK ANIMATION */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
 
     /* UNIQUE SEARCH */
-.search-box{
-margin-top:20px;
-display:flex;
-justify-content:center;
-}
+    .search-box {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
 
-.search-box input{
-width:60%;
-padding:12px 20px;
-border:none;
-border-radius:30px;
-outline:none;
-font-size:16px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-transition:0.3s;
-}
+    .search-box input {
+      width: 80%;
+      max-width: 500px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      outline: none;
+      font-size: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
 
-.search-box input:focus{
-width:70%;
-box-shadow:0 5px 30px rgba(0,0,0,0.5);
-}
+    .search-box input:focus {
+      width: 85%;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
 
-    /* MENU BUTTON */
-.menu-btn{
-position:absolute;
-top:15px;
-left:15px;
-font-size:22px;
-cursor:pointer;
-}
+    /* SLIDER */
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
 
-/* SIDE MENU */
-.side-menu{
-position:fixed;
-top:0;
-left:-250px;
-width:250px;
-height:100%;
-background:#111;
-padding-top:60px;
-transition:0.4s;
-z-index:1000;
-}
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
 
-.side-menu a{
-display:block;
-color:white;
-padding:12px 20px;
-text-decoration:none;
-border-bottom:1px solid #333;
-}
-.side-menu a:hover{background:#333;}
+    .slide {
+      min-width: 100%;
+    }
 
-/* OVERLAY */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-display:none;
-z-index:999;
-}
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    button.prev, button.next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    header {
+      background: linear-gradient(120deg, #ff6f00, #fff, #2e7d32);
+      color: black;
+      text-align: center;
+      padding: 30px 15px;
+      margin: 2px;
+      border-radius: 4px;
+      word-wrap: break-word;
+    }
+
+    header h1 {
+      margin: 10px 0;
+      font-size: 2.2rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(120deg, #ff6f00, #2e7d32);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 4px;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .hero p {
+      opacity: 0.95;
+    }
+
+    .banner-row {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .banner {
+      flex: 1;
+      background: white;
+      border-radius: 12px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 12px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      position: relative;
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: linear-gradient(120deg, #00c853, #64dd17);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: white;
+      font-size: 13px;
+    }
+
+    /* ===== TOP HEADER ===== */
+    .ja-top-header {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      min-height: 70px;
+      background: #111827;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .3);
+    }
+
+    .ja-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .menu-btn {
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* SIDE MENU */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #111;
+      padding-top: 60px;
+      transition: 0.4s;
+      z-index: 1000;
+    }
+
+    .side-menu a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover {
+      background: #333;
+    }
+
+    /* OVERLAY */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    .ja-logo-text {
+      color: white;
+      font-size: 22px;
+      font-weight: bolder;
+    }
+
+    .ja-logo-text span {
+      color: #fbbf24;
+    }
+
+    /* CENTER MENU */
+    .ja-nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ja-nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .ja-nav ul li a:hover {
+      color: #fbbf24;
+    }
+
+    /* RIGHT */
+    .ja-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* DARK MODE */
+    .dark {
+      background: #121212;
+      color: white;
+    }
+
+    .dark-btn {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: #727a89;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dark-btn:hover {
+      background-color: rgb(31, 154, 64);
+    }
+
+    .dark .card, .dark .banner {
+      background: #1e1e1e;
+      color: white;
+    }
     
-/* DARK MODE */
-.dark{
-background:#121212;
-color:white;
-}
-    
-/* DARK MODE BUTTON (RIGHT) */
-.dark-btn{
-position:absolute;
-margin-top: 15px;
-top:15px;
-right:15px;
-font-size:18px;
-cursor:pointer;
-background:#00000058;
-color:#fff;
-border:none;
-padding:6px 10px;
-border-radius:6px;
-}
+    .dark .card p, .dark .banner p {
+      color: #bbb;
+    }
 
-.dark .card{
-background:#1e1e1e;
-}
-.dark .banner{
-    background:#1e1e1e;
-}
-.dark  .btn{
-    background:#00c853;
-}
-/* SLIDER */
-/* SLIDER */
-.slider{
-width:100%;
-overflow:hidden;
-position:relative;
-}
+    .dark .btn {
+      background: #00c853;
+    }
 
-/* SLIDES */
-.slides{
-display:flex;
-transition:transform 0.5s ease;
-}
+    .ja-weather {
+      text-decoration: none;
+      background: #fbbf24;
+      color: #111827;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
-/* SLIDE */
-.slide{
-min-width:100%;
-}
+    /* village history*/
+    .gaon-card {
+      width: 90%;
+      max-width: 800px;
+      margin: 18px auto;
+      padding: 35px 25px;
+      background: linear-gradient(145deg, #c9c9c9, #f3f7f1);
+      border-radius: 25px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      transition: 0.4s;
+      box-sizing: border-box;
+    }
 
-/* IMAGE */
-.slide img{
-width:100%;
-height:400px;
-object-fit:cover;
-}
+    .gaon-card::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(76, 175, 80, 0.15);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+    }
 
-/* BUTTONS */
-button{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.5);
-color:#fff;
-border:none;
-padding:10px;
-cursor:pointer;
-}
+    .gaon-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    }
 
-/* POSITION */
-.prev{ left:10px; }
-.next{ right:10px; }
+    .gaon-icon {
+      width: 90px;
+      height: 90px;
+      margin: auto;
+      background: linear-gradient(135deg, #43a047, #1b5e20);
+      border-radius: 50%;
+      font-size: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      box-shadow: 0 10px 20px rgba(67, 160, 71, .4);
+    }
 
-/* MOBILE */
-@media(max-width:768px){
-.slide img{
-height:200px;
-}
-}
- 
-body {  
-margin: 0;  
-font-family: 'Segoe UI', sans-serif;  
-background: #eef2f5;  
-}  
-header {  
-background: linear-gradient(120deg, #ff6f00,#fff, #2e7d32);  
-color: black;  
-text-align: center;  
-padding: 26px;  
-margin: 2px;
-border-radius: 4px;
-}  
-/* HERO */
-.hero{
-background:linear-gradient(120deg,#ff6f00,#2e7d32);
-color:white;
-text-align:center;
-padding:40px 20px;
-border-radius:4px;
-}  
-.hero h2 {  
-margin: 0;  
-font-size: 26px;  
-}  
-.hero p {  
-opacity: 0.95;  
-}  
-.banner-row {  
-display: flex;  
-gap: 12px;  
-padding: 12px;  
-}  
-.banner {  
-flex: 1;  
-background: white;  
-border-radius: 12px;  
-text-align: center;  
-padding: 15px;  
-box-shadow: 0 3px 8px rgba(0,0,0,0.1);  
-}  
-.banner img {  
-width: 70px;  
-height: 70px;  
-border-radius: 50%;  
-}  
-.container {  
-padding: 12px;  
-}  
-.section-title {  
-font-weight: bold;  
-margin: 12px 0;  
-}  
-/* CARDS */
-.container{
-padding:12px;
-}
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:12px;
-}
-.card{
-position: relative; 
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-transition:0.4s;
-}
-.card:hover{
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
+    .gaon-card h2 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #1b5e20;
+      font-weight: bolder;
+    }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:10px;
-background:linear-gradient(120deg,#00c853,#64dd17);
-color:white;
-padding:8px 14px;
-border-radius:6px;
-text-decoration:none;
-transition:0.3s;
-}
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 15px #00ff00;
-}
+    .gaon-card p {
+      margin: 18px 0 28px;
+      color: #555;
+      line-height: 1.8;
+      font-size: 17px;
+      font-weight: bold;
+    }
 
-footer {  
-text-align: center;  
-padding: 12px;  
-background: #111;  
-color: white;  
-font-size: 13px;  
-}  
-/* Mobile */  
-@media (max-width: 700px) {  
-.banner-row {  
-flex-direction: column;  
-}  
-}  
-</style>  
-</head>  
-<body>  
-<!-- OVERLAY -->
-<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+    .gaon-card a {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #43a047, #1b5e20);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-<!-- MENU -->
-<div id="sideMenu" class="side-menu">
-<a href="#" onclick="goHome()">🏠 Home</a>
-<a href="#" onclick="shareSite()">📤 Share Website</a>
-<a href="https://scholarship.up.gov.in/index.aspx">🎓 Scholarship</a>
-<a href="https://sarkariresult.com.cm/">🚆 Jobs</a>
-</div>
-<!--HEADER-->
-<header>
-  <!-- LEFT SIDE MENU -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <!-- RIGHT DARK MODE -->
-<button class="dark-btn" onclick="darkMode()">🌙</button>
-    <center><img src="CC_20260211_193141.png"
-alt = "Gram Panchayat Jaria Alamapur" class = "logo"height ="100"/></center>
-<h1> <b> <big>🌾 जरिया आलमपुर </b></h1></big>  
-<p>आपके गांव की नौकरी और सरकारी योजनाएं</p>  
-    <div class="search-box">
-<input type="text" id="searchBox" placeholder="🔍 नौकरी / योजना खोजें..." onkeyup="searchData()">
-</div> 
-</header>  
- <!--HERO-->
-<div class="hero">  
-<h2>लेटेस्ट अपडेट – सीधे मोबाइल पर</h2>  
-<p>सरकारी नौकरी | योजनाएं | फॉर्म लिंक</p>  
-</div>
-  <hr>
-    <div class="banner">
-    <h2>🌾 मेरा गाँव - जरिया आलमपुर</h2>
-    <p style = "color :#444444"><b>गाँव का इतिहास, संस्कृति, शिक्षा, कृषि और अन्य जानकारी देखें।</b></p>
-    <a class="btn"
-       href="trykhuch.html"
-       target="_blank">
-          यहाँ देखें
-    </a>
+    .gaon-card a:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(67, 160, 71, .5);
+    }
+
+    /* MOBILE RESPONSIVENESS VIA MEDIA QUERIES */
+    @media(max-width:768px) {
+      .ja-top-header {
+        padding: 10px;
+        flex-wrap: wrap; /* मोबाइल में चीजें टूटने न पाएं */
+        gap: 10px;
+        justify-content: space-between;
+      }
+
+      .ja-logo-text {
+        font-size: 18px;
+      }
+
+      .ja-nav {
+        order: 3; /* नेविगेशन को नीचे वाली लाइन में लाने के लिए */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background: #1f2937;
+        padding: 8px 0;
+        border-radius: 6px;
+      }
+
+      .ja-nav ul {
+        gap: 15px;
+      }
+
+      .ja-nav ul li a {
+        font-size: 14px;
+      }
+
+      .ja-right {
+        order: 2;
+      }
+
+      .ja-weather {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+
+      .dark-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .slide img {
+        height: 220px;
+      }
+
+      .banner-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ja-top-header">
+    <div class="ja-left">
+      <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+      <div id="sideMenu" class="side-menu">
+        <a href="#" onclick="goHome()">🏠 Home</a>
+        <a href="#" onclick="shareSite()">📤 Share Website</a>
+        <a href="https://scholarship.up.gov.in/index.aspx">🎓 Scholarship</a>
+        <a href="https://sarkariresult.com.cm/">🚆 Jobs</a>
+      </div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+      <div class="ja-logo-text">
+        Jaria <span>Alampur</span>
+      </div>
     </div>
-    <hr>
-    <a class="weatherwidget-io" href="https://forecast7.com/en/28d5378d06/khanpur/" data-label_1="JARIA ALAMPUR" data-label_2="WEATHER" data-font="Ubuntu" data-icons="Climacons Animated" data-theme="marine" >JARIA ALAMPUR WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
-    <hr>
-<div class="banner-row">  
-<div class="banner">  
-<img src="data:image/webp;base64,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">  
 
-<h4>प्रधानमंत्री योजनाएं</h4>  
-<div class="card">  
-<h4>🎓 फ्री स्किल ट्रेनिंग</h4>  
-<p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>  
-<a class="btn" href="https://www.google.com/aclk?sa=L&ai=DChsSEwj27rqWhcmSAxUGqGYCHfGJBVUYACICCAEQABoCc20&co=1&ase=2&gclid=Cj0KCQiA4pvMBhDYARIsAGfgwvxZ0nuReFwYEJxX_AY0msnzQ49Igtb1i_JgDD8s53Fi1SIq0mOYnxoaAhqtEALw_wcB&cid=CAAS0gHkaIpEfeOYUYDOin-0MLpCEmjNKEEop2NpchAjcWkiXZ0Gz3CDybQE7-0kb2Z2c_ZhTnJEC53sk-nhEF3QV1Y8xqBZYgBFLKiVLa20OjZ4807VN5j-JASPlqPFmg8TjWCT9vTtuxUuwVvTKA4J0DPkdaMm7RynL-_7SYhiJkIz3cJe8_LJO1zGq6CKxs1U7xo2INKayBsQ8CxebyNq1J1hMMzYDCJ5iVnm9VG4phw14-rkNKUsW6V9H1KWxPagFWSIWpvptYIAL1tv8eIVY-cb1FA&cce=2&category=acrcp_v1_32&sig=AOD64_1dCWEE8fNsWUgCuEC5n2xA_FJJLw&q&nis=4&adurl&ved=2ahUKEwidiraWhcmSAxXwVmwGHYoKIDMQ0Qx6BAgVEAE" target="_blank">रजिस्टर करें</a>  
-</div>  
-</div>  
-<div class="banner">  
-<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQArQMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAQIDBAUGBwj/xAA6EAABAwIEAwUFBwIHAAAAAAABAAIDBBEFEiExBkFREyJhcYEHFDKRwSNCobHR4fAVUhYlNENicsL/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQMCBAX/xAAgEQEBAQEBAAIDAAMAAAAAAAAAAQIRAyExEhNBBCJR/9oADAMBAAIRAxEAPwD1lERc7QoUog0IiIAiKtkbn7bIk6FChZjadrfiufNVWjbyb6rf6y6wuShZhdA7cBWZIxbMw3SuLB1ZREWDEREwIiIAiIgCIiYVIiJEIiINCIgQFTW5lVLVxU7bbu6BWamZtPTukP4c1qmzh8meQ77J69J5xXz8vz+20FZNLqGgA8lDmSyNzWNvAKy2tjazKBtzVuTE8g+PQ9Cj9mf7Vv1X+RXJdg1urQrHROve46LEqsTD9Gk2vzWsfXZnEAaLn37cvxVZ49nzHVwTMqBeM3dzBVZuuZoa10dTERc6i66l5D2B4Vcbm89cnt5/r1xbREWkhERAEREARETCpERIhEUIMQbog3QGvx132DBcjvfRYcMRnjGUahX8cc0GNznARh13n+0WWBJxNSR0zuyjd2bRpYC58TcrG8TW/mury1Zj4jIfSyZSHPDTbqsU0kshykBotoSd1o5+LmVWaFkZu4aafosmtxSrpaaCqLGmN4GW7hbX13UrmS8debedZUmGPzd2UDlpqsSppp6ZwDoyByNt1pG8dvY5rXMgYNTd0g/QrOpeL/eWFkz6Wqi+92YN2+VyUteOedZ/bvvGZRTgVLC+4AcAu1pn52HpuF55LI10zZYSSwm4JXSDGxhrYxVwuyub3Mmtx4p+GvxllR/yMXdnHSIsXDa6PEaRtTCHNa4kWduCFlK8sscdzZeURETIREQBERMKkREiFClQgxQ8OLHBhs4iwPQqUQcvL1xbpaiuoJo3vcawSGN7gbbaadP3XMVfBVTO0OEzqljm6tzWyG/3f5qu0nc6gq5wyK7XSuy+JNiqXVIjb2lWBEDrlzXHqoTXL816WczU+PpwGH8GOnrGx53dmz4sp0uOvivQsawWObBKakaxrWtZYHpbbX0Wu/xLhtPTuqqucRRtdkhYbAeas1/GbPdi9xZ2Fr3Jvp6J69JZWp52X6cyOEo2TSQ5cubQZ3d3fa5WV/hSOljHbOsWaRhjtRz0V48SUspZX0LTlc0ieIj8bHnutjHiVHLA004yX1AAFvksa9bzjefHt7IsQ0k1NTgTuza93qFRxJiHbYtHQtuDBA3Xk4m/5LLee0EeR+YuIb5XNlZx7Dw/HjLGC6QZWRtA+IuH0Ufm5olmfSd/nXXcJADh+lIFswLjp4lbhWqWFtLSw07AA2KNrBbwCursxOSR5Xpr8t2iIoW2EoihASiImFSIiQFClEBCIiA02PQBrDVM+IEZvyH0XA1RrMUrG0MJLpJDqeTW8yvUqmMSwvYRcEbLk24eaT3+aks2qkjDWl2mU7n5/RT34zXK6/D/ACLjNkW8VwDBqXDKeOuljIi2cTz5rjhQ4JFXuLpg6EDusuS0E69bXWqOGYzUTvqa+qlkbckhzbhnlfZS7BaqQ/60hltTlA2Rqz6kX8/PWp212EE/DMcT7Ohs8Wc0G1j1Gy1NXQe5D3mgnbUUEmrXN3Z5+C0LOH3V5EDHTSAnUhxyldZwjhslHRVdK/MIrgNY7ZKyanOF+WvK9lbPAKdznRSPF7dfwXQYdQOmxJtbIPs2N7oPN37LDwxhY97CBaNltBbYWXQ4c3s6ONh+Ib+qM+cnw5/X1ttv/WQiIqOcRETIREQBERAVoihAEREARSGucbBpPkFdZTSE94ZR4pzNpdWd1gS0gtMHXDZRqev8+q3hiZGNNXdVgYn2rY2vgID2uvlcNHDp4eatnFk+S60zcKZR00sbWXY5obcm5JvroqxDGzKTGLNcQbi1/H53Wx7aOpjBBLS3du5B8lhVLw+LsJG8tzqP3SvFJq1qoaFkgL4IbMlcb8rA6X9fqtgaGOna3Jq29h48/mqix5tZ1ml17jSwVUtSD9mNTe5KmLasQRiNxAHfcbuPILZwGzbnZa4EDfZZcBLmB33RsnnPStZyhRQskkJdITk5BX305Hw6+CNedn0zKsopcHN+JpHoqQVjnDSURQgJRQpQFSBFVTSRurY4CR2haZMvgLD8yE5OirkNO+TcZW9SstlPGzdoJ6lXvBFWYkY6gAAWGyHmpQrZMZ26sVcRkhcGi7uQWS4d4qmy2Hn3FdHWz03veDVjqTEqfVtj3ZRzY4fVcXR+0jGJ640c2DRuqjJ2Ubc+XvbL1vHKNrGuqRaw+MHmuWjc2okP2bWE6gObqR1UNTikZDKid0TfeJWZyO8GaNupila12neJ2ACqipmjU3cfFXDGXWa0aqbaWSPmmbGdnHUD6rdsafgaOVgFjUNC2EZzq88/BbekhF8x0VsZT1V2mj7ONrd7DdXhspAtonNVTQQDuLq06mY83HdV9Nlm5lOMCWnfHru3qFaWzkkZFE+SV4ZGwFznE2AA3JXnOC+0Skx7ih+GQURgpnZhTzvf3pSOeW3dBANlLWOfTUrs0UIpNK3OaxrnPcGtaCXE8gue4Irv6xxPjOIgnsmwxQwjo27j+J1WL7Q8W9ywxtDC7LNV/FbcRjf57fNUexpuaixOf++VjfkF0eeP9bqp6vzx6MNkUKUwIiICh4Vs6K65UOWoGuxaLt4exLy0Hna65t2BzRyB+UMYCXHI65J8Oi7B0Yc65vojog4WNrJXMpy8csI8jbXPqsujp+9mIvpotqaaO/eYCfFVhjWXytAWJ58rV0x44+fLos2HQKyAsiMaBU4wrCKFafJlNkBeCEq0111hYtitLhVJJU1srYo42lznE7AIDjvbJxCMOwRuFwuHbVmsljqIwdvU6eQK8Vw6plo6uCrgdaeF4kY7xBusvjDH5eJMemrX5hG42iY77rBsP51WtYe8B4pE+lMLr4sTw6nrqe3ZTsDwOnh6G6y7rzn2Q4rnp6zCJHkmJ3bQ35NOjgPXX1K9EXNqcvFI8d4nxX+q4zUVTXXjvkiH/Abfr6rvPYyP8hrn/wB1WR8mheTTvPu73D4mO18l7J7H4wOCYZx/v1M7/k8s/wDK7/SczxDPzeu3RQiiolSFClIIIVsq6dlaOicCnQ6qVqn19Syodmja2nZv3Te17b9VsmPzC5Bb5iy0Eubm1VpwI5K8FBF0BZaNVfChrLEFVkDdAWpHZWkrFa7tHqusflbbmrdJqbpBkEiOO/ReE+1ziN9dizcJhkIpoB2k9jv0H86r2fGqkU9I917WC+XMWrHYli9ZVa2mmLifAaBK35NRC67nzSWvyCuQEvlYOZcrIvJZrB3QsijsJHyHaNu/iiMug4LxM4ZxTSVGa0YlySdCxwyn6HzC+gF8v0zjcvuRc7hfRvDlb/UcAw+sI1lgaXf9rWP4gqPpG814gDaq7MDuSM7zeS939nUbIeCsIZGLN7DN6kkn8SURdnqjh0oQIiioqCIiQQVZkKInAxnUFPJIJHh5sc2QvOS/XLssojUIi0BLajxKlEglwsLqBsiIDVYg451epD3AiIgcr7RJpIsBrXsdZwidb5L5yphceZsiLH9Os6o+zja1gAFlRIclCxrfvm7kRbZXPhbE0bWuvcvZbI6Tg+BrjcRyyNb4C9/zJUIpejWX/9k=">  
-<h4>सरकारी भर्तियां</h4>  
-<div class="card">  
-<h4>🚆 रेलवे भर्ती 2026</h4>  
-<p>10वीं / ITI पास के लिए सुनहरा मौका।</p>  
-<a class="btn" href="https://www.rrbapply.gov.in/#/auth/landing" target="_blank">Apply करें</a>  
-</div>  
-</div>  
-</div>  
-    <hr>
-    <!--SLIDER-->
- <div class="slider">
-<div class="slides" id="slides">
-<div class="slide">
-<img src="https://www.jagranimages.com/images/newimg/11032024/11_03_2024-pm_kisan_10_23672104_143440606.webp">
-</div>
-<div class="slide">
-<img src="https://earthnews.in/wp-content/uploads/2026/03/Pradhan-Mantri-Jan-Aushadhi-Yojana.jpg">
-</div>
-<div class="slide">
-<img src="https://lokpahal.org/wp-content/uploads/2025/05/PM-Surya-Ghar-Muft-Bijli-Yojana.jpg">
-</div>
-</div>
-<button class="prev" onclick="prev()">❮</button>
-<button class="next" onclick="next()">❯</button>
-</div>
+    <nav class="ja-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="trykhuch.html">History</a></li>
+      </ul>
+    </nav>
+
+    <div class="ja-right">
+      <button class="dark-btn" onclick="darkMode()">🌙</button>
+      <a href="https://www.google.com/search?q=weather+jaria+alampur" class="ja-weather">
+        ☁ Weather
+      </a>
+    </div>
+  </div>
+
+  <header>
+    <img src="CC_20260211_193141.png" alt="Gram Panchayat Jaria Alamapur" class="logo" height="100" />
+    <h1><b>🌾 जरिया आलमपुर</b></h1>
+    <p>आपके गांव की नौकरी और सरकारी योजनाएं</p>
+    <div class="search-box">
+      <input type="text" id="searchBox" placeholder="🔍 नौकरी / योजना खोजें..." onkeyup="searchData()">
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2>लेटेस्ट अपडेट – सीधे मोबाइल पर</h2>
+    <p>सरकारी नौकरी | योजनाएं | फॉर्म लिंक</p>
+  </div>
+
+  <div class="gaon-card">
+    <div class="gaon-icon">🌾</div>
+    <h2>मेरा गाँव - जरिया आलमपुर</h2>
+    <p>गाँव का इतिहास, संस्कृति, शिक्षा, कृषि और अन्य महत्वपूर्ण जानकारी जानें.</p>
+    <a href="trykhuch.html" target="_blank">यहाँ देखें</a>
+  </div>
+
+  <a class="weatherwidget-io" href="https://forecast7.com/en/28d5378d06/khanpur/" data-label_1="JARIA ALAMPUR"
+    data-label_2="WEATHER" data-font="Ubuntu" data-icons="Climacons Animated" data-theme="marine">JARIA ALAMPUR WEATHER</a>
+  <script>
+    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+  </script>
+  
+  <hr>
+
+  <div class="banner-row">
+    <div class="banner">
+      <img src="data:image/webp;base64,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" alt="PM Yojana">
+      <h4>प्रधानमंत्री योजनाएं</h4>
+      <div class="card">
+        <h4>🎓 फ्री स्किल ट्रेनिंग</h4>
+        <p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>
+        <a class="btn" href="https://www.google.com/aclk?sa=L&ai=DChsSEwj27rqWhcmSAxUGqGYCHfGJBVUYACICCAEQABoCc20..." target="_blank">रजिस्टर करें</a>
+      </div>
+    </div>
+    <div class="banner">
+      <img src="data:image/jpeg;base64,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" alt="Govt Jobs">
+      <h4>सरकारी भर्तियां</h4>
+      <div class="card">
+        <h4>🚆 रेलवे भर्ती 2026</h4>
+        <p>10वीं / ITI पास के लिए सुनहरा मौका।</p>
+        <a class="btn" href="https://www.rrbapply.gov.in/#/auth/landing" target="_blank">Apply करें</a>
+      </div>
+    </div>
+  </div>
 
   <hr>
-<div class="container">  
-<h3 class="section-title">🔥 ताजा अपडेट</h3>  
-<div class="cards">  
-<div class="card">  
-<!--FOR NEW--->
-<div class="new-badge">NEW</div>
-<h4>🚆 रेलवे भर्ती 2026</h4>  
-<p>10वीं / ITI पास के लिए सुनहरा मौका।</p>  
-<a class="btn" href="https://www.rrbapply.gov.in/#/auth/landing" target="_blank">Apply करें</a>  
-</div>  
-<div class="card">  
-<h4>🏠 प्रधानमंत्री आवास योजना</h4>  
-<p>घर बनाने के लिए सरकारी सहायता।</p>  
-<a class="btn" href="https://pmayglist.com/" target="_blank">जानकारी देखें</a>  
-</div>  
-<div class="card">  
-<h4>🎓 फ्री स्किल ट्रेनिंग</h4>  
-<p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>  
-<a class="btn" href="https://www.google.com/aclk?sa=L&ai=DChsSEwj27rqWhcmSAxUGqGYCHfGJBVUYACICCAEQABoCc20&co=1&ase=2&gclid=Cj0KCQiA4pvMBhDYARIsAGfgwvxZ0nuReFwYEJxX_AY0msnzQ49Igtb1i_JgDD8s53Fi1SIq0mOYnxoaAhqtEALw_wcB&cid=CAAS0gHkaIpEfeOYUYDOin-0MLpCEmjNKEEop2NpchAjcWkiXZ0Gz3CDybQE7-0kb2Z2c_ZhTnJEC53sk-nhEF3QV1Y8xqBZYgBFLKiVLa20OjZ4807VN5j-JASPlqPFmg8TjWCT9vTtuxUuwVvTKA4J0DPkdaMm7RynL-_7SYhiJkIz3cJe8_LJO1zGq6CKxs1U7xo2INKayBsQ8CxebyNq1J1hMMzYDCJ5iVnm9VG4phw14-rkNKUsW6V9H1KWxPagFWSIWpvptYIAL1tv8eIVY-cb1FA&cce=2&category=acrcp_v1_32&sig=AOD64_1dCWEE8fNsWUgCuEC5n2xA_FJJLw&q&nis=4&adurl&ved=2ahUKEwidiraWhcmSAxXwVmwGHYoKIDMQ0Qx6BAgVEAE" target="_blank">रजिस्टर करें</a>  
-</div>  
-<div class="card">  
-<h4>🚆 UP SCHLELORSHIP PROGRAM </h4>  
-<p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>  
-<a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>  
-</div>  
-<div class="card">  
-<h4>🚆 UPSC </h4>  
-<p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>  
-<a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>  
-</div>  
-<div class="card">  
-<h4>🚆 FOR GDS POST KA LIYA </h4>  
-<p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>  
-<a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>  
-</div>  
-<div class="card">  
-<h4>🚆 DEMOGRAPHIC DATA JARIA ALAMPUR </h4>  
-<p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>  
-<a class="btn" href="https://docs.google.com/spreadsheets/d/16Ef7JDEqXAdtbIMlGeQeDXOFPPmLJTRJbxfusnUYdoQ/edit?usp=drivesdk" target="_blank">check now करें</a>  
-</div>  
-  <div class="card">  
-<h4>🚆गाँव की समस्या </h4>  
-<p>अगर कोई समस्या हो तो यहाँ लिखो।</p>  
-<a class="btn" href= "https://docs.google.com/forms/d/e/1FAIpQLSc2_dSNaPYEdlA25uVQnz6v45tfJXWE2NPrSYO67de3sAdXIw/viewform?usp=publish-editor" target="_blank">check now करें</a>  
-</div>  
-</div>  
-  
-</div>  
-<hr>
- <section id="gallery">
-<h2 class="title">Village Gallery</h2>
 
-<div class="gallery">
+  <div class="slider">
+    <div class="slides" id="slides">
+      <div class="slide">
+        <img src="https://www.jagranimages.com/images/newimg/11032024/11_03_2024-pm_kisan_10_23672104_143440606.webp" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="https://earthnews.in/wp-content/uploads/2026/03/Pradhan-Mantri-Jan-Aushadhi-Yojana.jpg" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="https://lokpahal.org/wp-content/uploads/2025/05/PM-Surya-Ghar-Muft-Bijli-Yojana.jpg" alt="Slide 3">
+      </div>
+    </div>
+    <button class="prev" onclick="prev()">❮</button>
+    <button class="next" onclick="next()">❯</button>
+  </div>
 
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800">
-
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
-
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800">
-
-<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800">
-
-</div>
-</section>
-<hr>
-
- <section id="gallery">
-<h2 class="title">Village Education</h2>
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800">
-
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
-
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800">
-
-<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800">
-
-</div>
-</section>
-<section id="gallery">
-<hr>
- <h2 class="title">Village Agriculture</h2>
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800">
-
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800">
-
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800">
-
-<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800">
-
-</div>
-</section>
-  
-  
-  <a href="https://google.com" > <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMPQmasbFx_ipNCaPQqmK8DnsbgZnQP8WI8Q&s"alt = "Google" height  = "30"/></a>
-  <a href="https://youtube.com">  <img src = "https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt = "youtube" height = "30"/></a>
-  <br> </br>
-<ul>
-  <caption><b>🔹 महत्वपूर्ण सूचना</b></captain>
-  <li> यह वेबसाइट केवल सामान्य जानकारी के उद्देश्य से बनाई गई है।</li>
-  <li> सभी जानकारी सही रखने का प्रयास किया जाता है।</li>
-  <li> सभी सेवाएं नियमों के अनुसार प्रदान की जाती हैं।</li>
-  <li> यह वेबसाइट केवल जानकारी के लिए है।</li>
-  <li> सर्वाधिकार सुरक्षित।</li>
-</ul>
   <hr>
-  <h6> <center>About / Terms of service / Legal info / Disclaimer</center> </h6>
-  <h6> <center>Feedback / Help / Privacy / Accessibility</center> </h6>
-  <h6> <center>Developed by Manish Prajapati</center> </h6>
-    
- <script>
-function darkMode(){
-document.body.classList.toggle("dark");
-}
-     
-// MENU OPEN CLOSE
-function toggleMenu(){
-document.getElementById("sideMenu").style.left="0";
-document.getElementById("overlay").style.display="block";
-}
 
-function closeMenu(){
-document.getElementById("sideMenu").style.left="-250px";
-document.getElementById("overlay").style.display="none";
-}
+  <div class="container">
+    <h3 class="section-title">🔥 ताजा अपडेट</h3>
+    <div class="cards">
+      <div class="card">
+        <div class="new-badge">NEW</div>
+        <h4>🚆 रेलवे भर्ती 2026</h4>
+        <p>10वीं / ITI पास के लिए सुनहरा मौका।</p>
+        <a class="btn" href="https://www.rrbapply.gov.in/#/auth/landing" target="_blank">Apply करें</a>
+      </div>
+      <div class="card">
+        <h4>🏠 प्रधानमंत्री आवास योजना</h4>
+        <p>घर बनाने के लिए सरकारी सहायता।</p>
+        <a class="btn" href="https://pmayglist.com/" target="_blank">जानकारी देखें</a>
+      </div>
+      <div class="card">
+        <h4>🎓 फ्री स्किल ट्रेनिंग</h4>
+        <p>युवाओं के लिए सरकारी ट्रेनिंग प्रोग्राम।</p>
+        <a class="btn" href="https://www.google.com/aclk?sa=L&ai=DChsSEwj27rqWhcmSAxUGqGYCHfGJBVUYACICCAEQABoCc20..." target="_blank">रजिस्टर करें</a>
+      </div>
+      <div class="card">
+        <h4>🚆 UP SCHOLARSHIP PROGRAM</h4>
+        <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
+        <a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>
+      </div>
+      <div class="card">
+        <h4>🚆 UPSC</h4>
+        <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
+        <a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>
+      </div>
+      <div class="card">
+        <h4>🚆 FOR GDS POST</h4>
+        <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
+        <a class="btn" href="https://scholarship.up.gov.in/index.aspx" target="_blank">Apply करें</a>
+      </div>
+      <div class="card">
+        <h4>🚆 DEMOGRAPHIC DATA JARIA ALAMPUR</h4>
+        <p>10TH AND 12TH STUDENT पास के लिए सुनहरा मौका।</p>
+        <a class="btn" href="https://docs.google.com/spreadsheets/d/16Ef7JDEqXAdtbIMlGeQeDXOFPPmLJTRJbxfusnUYdoQ/edit?usp=drivesdk" target="_blank">check now करें</a>
+      </div>
+      <div class="card">
+        <h4>🚆 गाँव की समस्या</h4>
+        <p>अगर कोई समस्या हो तो यहाँ लिखो।</p>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc2_dSNaPYEdlA25uVQnz6v45tfJXWE2NPrSYO67de3sAdXIw/viewform?usp=publish-editor" target="_blank">check now करें</a>
+      </div>
+    </div>
+  </div>
 
-// HOME FUNCTION
-function goHome(){
-window.scrollTo({top:0,behavior:'smooth'});
-closeMenu();
-}
+  <hr>
 
-// SHARE FUNCTION
-function shareSite(){
-let url = "https://techwithmanish228.github.io/jaria/";
+  <section id="gallery">
+    <h2 class="title">Village Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800" alt="Gallery 1">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Gallery 2">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Gallery 3">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Gallery 4">
+    </div>
+  </section>
 
-if(navigator.share){
-navigator.share({
-title:"जरिया आलमपुर वेबसाइट",
-url:url
-});
-}else{
-navigator.clipboard.writeText(url);
-alert("Link copied: " + url);
-}
+  <hr>
 
-closeMenu();
-}
+  <section id="education">
+    <h2 class="title">Village Education</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800" alt="Education 1">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Education 2">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Education 3">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Education 4">
+    </div>
+  </section>
 
-// CLICK OUTSIDE CLOSE
-document.addEventListener("click", function(e){
-let menu=document.getElementById("sideMenu");
-let btn=document.querySelector(".menu-btn");
+  <hr>
 
-if(!menu.contains(e.target) && !btn.contains(e.target)){
-closeMenu();
-}
-});
+  <section id="agriculture">
+    <h2 class="title">Village Agriculture</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800" alt="Agri 1">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Agri 2">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Agri 3">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Agri 4">
+    </div>
+  </section>
 
-/* SEARCH FUNCTION */
-function searchData(){
-let input = document.getElementById("searchBox").value.toLowerCase();
-let cards = document.querySelectorAll(".card");
+  <hr>
 
-cards.forEach(card=>{
-let text = card.innerText.toLowerCase();
-card.style.display = text.includes(input) ? "" : "none";
-});
-}
-     <!-- slider script-->
-let i = 0;
-const slides = document.getElementById("slides");
-const allSlides = document.querySelectorAll(".slide");
-const total = allSlides.length;
+  <div style="padding: 12px; text-align: center;">
+    <a href="https://google.com"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMPQmasbFx_ipNCaPQqmK8DnsbgZnQP8WI8Q&s" alt="Google" height="30" /></a>
+    <a href="https://youtube.com"> <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="youtube" height="30" /></a>
+  </div>
 
-/* FIRST SLIDE CLONE */
-const clone = allSlides[0].cloneNode(true);
-slides.appendChild(clone);
+  <div style="padding: 12px;">
+    <strong>🔹 महत्वपूर्ण सूचना</strong>
+    <ul>
+      <li>यह वेबसाइट केवल सामान्य जानकारी के उद्देश्य से बनाई गई है।</li>
+      <li>सभी जानकारी सही रखने का प्रयास किया जाता है।</li>
+      <li>सभी सेवाएं नियमों के अनुसार प्रदान की जाती हैं।</li>
+      <li>सर्वाधिकार सुरक्षित।</li>
+    </ul>
+  </div>
 
-/* SHOW */
-function show(){
-  slides.style.transform = `translateX(-${i * 100}%)`;
-}
+  <hr>
+  
+  <h6 style="text-align: center;">About / Terms of service / Legal info / Disclaimer</h6>
+  <h6 style="text-align: center;">Feedback / Help / Privacy / Accessibility</h6>
+  <h6 style="text-align: center;">Developed by Manish Prajapati</h6>
 
-/* NEXT */
-function next(){
-  i++;
-  slides.style.transition = "transform 0.5s ease";
-  show();
+  <footer>
+    © 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI
+  </footer>
 
-  if(i === total){
-    setTimeout(()=>{
-      slides.style.transition = "none";
-      i = 0;
-      show();
-    },500);
-  }
-}
+  <script>
+    /* dark mode */
+    function darkMode() {
+      document.body.classList.toggle("dark");
+    }
 
-/* PREV */
-function prev(){
-  if(i === 0){
-    slides.style.transition = "none";
-    i = total;
-    show();
+    /* MENU OPEN CLOSE */
+    function toggleMenu() {
+      document.getElementById("sideMenu").style.left = "0";
+      document.getElementById("overlay").style.display = "block";
+    }
 
-    setTimeout(()=>{
+    function closeMenu() {
+      document.getElementById("sideMenu").style.left = "-250px";
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    function goHome() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      closeMenu();
+    }
+
+    function shareSite() {
+      let url = "https://techwithmanish228.github.io/jaria/";
+      if (navigator.share) {
+        navigator.share({
+          title: "जरिया आलमपुर वेबसाइट",
+          url: url
+        });
+      } else {
+        navigator.clipboard.writeText(url);
+        alert("Link copied: " + url);
+      }
+      closeMenu();
+    }
+
+    /* CLICK OUTSIDE CLOSE */
+    document.addEventListener("click", function (e) {
+      let menu = document.getElementById("sideMenu");
+      let btn = document.querySelector(".menu-btn");
+      if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    /* SEARCH FUNCTION */
+    function searchData() {
+      let input = document.getElementById("searchBox").value.toLowerCase();
+      let cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "" : "none";
+      });
+    }
+
+    /* SLIDER SCRIPT */
+    let i = 0;
+    const slides = document.getElementById("slides");
+    const allSlides = document.querySelectorAll(".slide");
+    const total = allSlides.length;
+
+    if(total > 0) {
+      const clone = allSlides[0].cloneNode(true);
+      slides.appendChild(clone);
+    }
+
+    function show() {
+      slides.style.transform = `translateX(-${i * 100}%)`;
+    }
+
+    function next() {
+      i++;
       slides.style.transition = "transform 0.5s ease";
-      i--;
       show();
-    },50);
-  } else {
-    i--;
-    show();
-  }
-}
 
-/* AUTO SLIDE */
-setInterval(next,3000);
-</script>
-<footer>  
-© 2026 | जरिया आलमपुर डिजिटल सेवा | MADE BY MANISH PRAJAPATI  
-</footer>  
-</body>  
-</html>  
+      if (i === total) {
+        setTimeout(() => {
+          slides.style.transition = "none";
+          i = 0;
+          show();
+        }, 500);
+      }
+    }
+
+    function prev() {
+      if (i === 0) {
+        slides.style.transition = "none";
+        i = total;
+        show();
+
+        setTimeout(() => {
+          slides.style.transition = "transform 0.5s ease";
+          i--;
+          show();
+        }, 50);
+      } else {
+        i--;
+        show();
+      }
+    }
+
+    setInterval(next, 3000);
+  </script>
+</body>
+
+</html>
